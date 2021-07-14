@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+
+      <div *ngFor="let item of items; let i=index" class="col-6 d-flex p-2 mx-auto">
+          <div class="card mx-auto">
+              <div class="row no-gutters">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                  <img src="{{item.img}}" class="card-img-top mx-auto d-block" style="max-width:320px">
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-8">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ item.nombre }}</h4>
+                    <p class="card-text">{{ item.bio }}</p>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item font-italic">{{ item.aparicion }}</li>
+                      <li class="list-group-item text-{{ getBSClassFromCasa(item) }} font-weight-bold">{{ item.casa }}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row no-gutters p-3 mt-auto">
+                <button (click)="viewDetail(item.id)" type="button" class="btn btn-primary btn-block">Ver mas</button>
+              </div>
+          </div>
+      </div>
+
+    </div>
+</div>

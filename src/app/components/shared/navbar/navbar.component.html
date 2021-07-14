@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="assets/img/A-64.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        {{title}}
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['home']">Inicio</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['heroes']">Heroes</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['villains']">Villanos</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['about']">Acerca de</a>
+        </li>
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0">
+        <input #searchBar 
+          (keydown.enter)="searchItem(
+            searchBar.value, searchContext()[0])" 
+          class="form-control mr-sm-2" 
+          type="text" 
+          placeholder="Buscar {{ searchContext()[1] }}">
+        <button 
+          (click)="searchItem(searchBar.value, searchContext()[0])" 
+          class="btn btn-light my-2 my-sm-0" 
+          type="button"
+        >
+          Buscar
+        </button>
+      </form>
+    </div>
+</nav>

@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div *ngFor="let hero of heroes; let i=index" class="col-6 d-flex p-2 mx-auto">
+        <div class="card mx-auto">
+            <div class="row no-gutters">
+              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                <img src="{{hero.img}}" class="card-img-top mx-auto d-block" style="max-width:320px">
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-8">
+                <div class="card-body">
+                  <h2 class="card-title">{{ hero.nombre }}</h2>
+                  <p class="card-text">{{ hero.bio }}</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item font-italic">{{ hero.aparicion }}</li>
+                    <li class="list-group-item text-{{ getBSClassFromCasa(hero) }} font-weight-bold">{{ hero.casa }}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row no-gutters p-3 mt-auto">
+              <button (click)="viewDetail(hero.id)" type="button" class="btn btn-primary btn-block">Ver mas</button>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</div>
